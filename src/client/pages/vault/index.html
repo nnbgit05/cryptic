@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/knox.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Knox</title>
+  </head>
+  <body>
+    <div id="vault">
+      <div id="header" class="hstack">
+        <div class="nav hstack">
+          <a href="/"><img class="logo icon" alt="Knox logo" /></a>
+          Knox Vault
+        </div>
+        <div class="nav hstack align-end">
+          <a href="#settings">Settings</a>
+          <a href="/login/">Log out</a>
+        </div>
+      </div>
+      <div id="main" class="hstack">
+        <div id="sidebar">
+          <button id="new">New Item</button>
+          <template id="item-template">
+            <div class="item">
+              <img
+                class="icon"
+                onerror="this.src='/website.svg'"
+                alt="Site icon"
+              />
+              <div class="name">Website</div>
+            </div>
+          </template>
+        </div>
+        <div class="panel" id="info">
+          <div>
+            <h2 class="item-title">Website URL</h2>
+            <input id="url" placeholder="Website URL" type="text" name="url" />
+            <a
+              id="url-link"
+              href="https://example.com"
+              target="_blank"
+              aria-label="Open webpage"
+            >
+              &nearrow;
+            </a>
+          </div>
+
+          <div>
+            <h2 class="item-title">Email</h2>
+            <input id="email" placeholder="Email" type="text" name="email" />
+          </div>
+
+          <div>
+            <h2 class="item-title">Password</h2>
+            <input
+              id="pwd"
+              placeholder="Password"
+              type="password"
+              name="password"
+            />
+
+            <button id="show-pwd">Show</button>
+            <button id="copy-pwd">Copy</button>
+          </div>
+
+          <div id="actions">
+            <button id="update-item">Update</button>
+            <button id="delete-item">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="window">
+      <div id="settings" class="hide">
+        <a href="#" id="close-window">&Cross;</a>
+        <div id="window-title">
+          <h2>Knox Settings</h2>
+        </div>
+
+        <button id="export">Export Vault</button>
+      </div>
+
+      <div id="new-item" class="hide">
+        <a href="#" id="close-window">&Cross;</a>
+        <div id="window-title">
+          <h2>Add a new item</h2>
+        </div>
+
+        <form name="new" id="item-values">
+          <input
+            type="text"
+            name="website"
+            id="new-name"
+            placeholder="Website Name"
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            id="new-email"
+            placeholder="Email"
+            required
+          />
+          <input
+            type="password"
+            name="password"
+            id="new-password"
+            placeholder="Password"
+            required
+          />
+          <input
+            type="text"
+            name="url"
+            id="new-url"
+            placeholder="Website URL"
+            required
+          />
+
+          <button id="create" type="button">Create Item</button>
+          <div id="msg" style="color: red; text-align: center"></div>
+        </form>
+      </div>
+    </div>
+    <script type="module" src="../vault/vault.js"></script>
+  </body>
+</html>
