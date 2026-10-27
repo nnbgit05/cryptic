@@ -115,6 +115,6 @@ async function downloadSecretKeyPDF(key) {
   const fileURL = URL.createObjectURL(file);
   const link = document.createElement("a");
   link.href = fileURL;
-  link.download = "Knox - Security Information Document";
+  link.download = "Cryptic - Security Information Document";
   link.click();
 }

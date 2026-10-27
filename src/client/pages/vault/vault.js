@@ -169,7 +169,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const jsonObject = URL.createObjectURL(blob);
     const link = document.createElement("a");
     link.href = jsonObject;
-    link.download = "knox.json";
+    link.download = "cryptic.json";
     link.click();
 
     URL.revokeObjectURL(jsonObject);

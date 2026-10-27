@@ -67,6 +67,6 @@ npm test
 
 The SRP tests check the multiplier `k`, scrambling parameter `u` and session key `K` against the official RFC 5054 test vectors.
 
-## Note
+## Compatibility
 
-Knox was the project's working name, so you will still see it in the setup script, the package name and the database name.
+The PostgreSQL database and browser storage retain the internal name `knox` so existing installations can continue to use their saved data. The application, package and installer use the name Cryptic.

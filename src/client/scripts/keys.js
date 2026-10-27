@@ -223,7 +223,7 @@ export async function generateVault(keychain, AUK, email, pwd) {
 
   const vault = JSON.stringify([
     {
-      name: "Knox",
+      name: "Cryptic",
       url: "http://localhost:3000",
       email: email,
       pwd: pwd,

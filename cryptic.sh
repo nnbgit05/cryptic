@@ -1,7 +1,7 @@
 #!/bin/bash
 
 set -e
-echo "Welcome to Knox's installation and server management script."
+echo "Welcome to Cryptic's installation and server management script."
 echo ""
 
 # Check if node is installed (and install it if not)
@@ -9,7 +9,7 @@ export NVM_DIR=~/.nvm
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 if ! which node > /dev/null
     then
-        echo "Node is not installed. This is required as Knox's runtime."
+        echo "Node is not installed. This is required as Cryptic's runtime."
         read -p "Install node? (y/n) " iNode
 
         if [ "$iNode" = "y" ]
@@ -44,33 +44,33 @@ if ! which node > /dev/null
         echo "Node is already installed, continuing..."
     fi
 
-# Check script is running from knox's base directory
+# Check script is running from cryptic's base directory
 pkgName=$(npm pkg get name 2>/dev/null | tr -d '"')
-if [ "$pkgName" != "knox" ]
+if [ "$pkgName" != "cryptic" ]
     then
         echo ""
-        echo "Script is not running from Knox's base directory."
-        echo "Please change into the directory with the command 'cd /path/to/knox'"
+        echo "Script is not running from Cryptic's base directory."
+        echo "Please change into the directory with the command 'cd /path/to/cryptic'"
         exit 1
     else
-        echo "In Knox's base directory, continuing..."
+        echo "In Cryptic's base directory, continuing..."
     fi
 
 # Install npm packages
-echo "Installing required packages for Knox..."
+echo "Installing required packages for Cryptic..."
 npm install > /dev/null
 
 # TODO: npm audit
 
 # Build project with vite
-echo "Building Knox from source..."
+echo "Building Cryptic from source..."
 npm run build
 
 # Ready to start the production server
 # TODO: Add config/server management
 echo ""
-read -p "Knox is ready! Start the server now? (y/n) " startKnox
-if [ "$startKnox" = "y" ]
+read -p "Cryptic is ready! Start the server now? (y/n) " startCryptic
+if [ "$startCryptic" = "y" ]
     then
         npm start
     else
