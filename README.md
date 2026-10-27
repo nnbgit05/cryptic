@@ -33,7 +33,7 @@ cryptic.sh       Install and start script
 ## Requirements
 
 - [Node.js](https://nodejs.org/) 20 or newer, with npm
-- [PostgreSQL](https://www.postgresql.org/) running locally, with a database named `knox`
+- [PostgreSQL](https://www.postgresql.org/) running locally, with the database connection configured in `src/server/config/database.js`
 - [Redis](https://redis.io/) running locally on the default port
 
 ## Getting started
@@ -69,4 +69,4 @@ The SRP tests check the multiplier `k`, scrambling parameter `u` and session key
 
 ## Compatibility
 
-The PostgreSQL database and browser storage retain the internal name `knox` so existing installations can continue to use their saved data. The application, package and installer use the name Cryptic.
+Existing database and browser-storage identifiers are preserved for compatibility with saved vaults. Keep the existing storage configuration when updating an installation.

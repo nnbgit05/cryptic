@@ -1,6 +1,6 @@
 import "~/style.css";
 import "~/pages/vault/vault.css";
-import knoxLogo from "/knox.svg";
+import crypticLogo from "/cryptic.svg";
 
 import { api } from "~/scripts/middleware.js";
 import { isEmail, isUrl } from "@/utils.js";
@@ -12,7 +12,7 @@ import {
   encryptVault,
 } from "~/scripts/keys.js";
 
-document.querySelector(".logo").src = knoxLogo;
+document.querySelector(".logo").src = crypticLogo;
 window.addEventListener("hashchange", (x) => setWindow(x.newURL));
 setWindow(window.location.href);
 
@@ -139,7 +139,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     vault.push(item);
     selectedItem = item;
 
-    document.querySelector(`.knox-item-${item.name}`).remove();
+    document.querySelector(`.cryptic-item-${item.name}`).remove();
     listItem(item, true);
 
     const encVault = await encryptVault(keychain.vek, vault, vaultUuid);
@@ -151,7 +151,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   const deleteButton = document.getElementById("delete-item");
   deleteButton.addEventListener("click", async () => {
-    document.querySelector(`.knox-item-${selectedItem.name}`).remove();
+    document.querySelector(`.cryptic-item-${selectedItem.name}`).remove();
     for (const i in vault) {
       if (vault[i].name === selectedItem.name) {
         vault.splice(i, 1);
@@ -184,7 +184,7 @@ function listItem(item, selected = false) {
 
   elem.querySelector(".name").textContent = item.name;
   elem.querySelector(".icon").src = `${item.url}/favicon.ico`;
-  elem.classList.add(`knox-item-${item.name}`);
+  elem.classList.add(`cryptic-item-${item.name}`);
 
   elem.addEventListener("click", (x) => {
     const items = document.querySelectorAll(".item");

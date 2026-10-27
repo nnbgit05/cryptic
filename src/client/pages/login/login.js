@@ -1,12 +1,12 @@
 import "~/style.css";
-import knoxLogo from "/knox.svg";
+import crypticLogo from "/cryptic.svg";
 import loadingIcon from "/loading.svg";
 
 import * as auth from "~/scripts/auth.js";
 import { delKey } from "~/scripts/keys.js";
 import { isEmail } from "@/utils.js";
 
-document.querySelector(".logo").src = knoxLogo;
+document.querySelector(".logo").src = crypticLogo;
 document.querySelector("#loading img").src = loadingIcon;
 
 const user = JSON.parse(localStorage.getItem("user"));
